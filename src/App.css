@@ -1,38 +1,44 @@
 .App {
-  text-align: center;
+  width: 100%;
+  height: 100dvh;
+  position: relative;
+  background: var(--color-gradient-main);
+  z-index: 1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App .container {
+  padding-top: 46px;
+  width: 440px;
+  margin: 0 auto;
+  height: 100dvh;
+  overflow: visible;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.loading {
+  height: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  width: 100%;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.logo {
+  width: 44%;
+  height: auto;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.loading .h3 {
+  padding-top: 20px;
+  text-align: center;
+  background: var(--color-gradient);
+  -webkit-background-clip: text; /* Clip the background to the text */
+  color: transparent; /* Set the text color to transparent */
+  display: inline-block; /* Ensure the gradient works properly */
+  text-fill-color: transparent;
+}
+@media screen and (max-width: 440px) {
+  .App .container {
+    height: 100%;
+    width: -webkit-fill-available;
+    margin: 0;
+    overflow: hidden;
   }
 }

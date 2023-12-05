@@ -1,0 +1,36 @@
+button.btn {
+  position: relative;
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 100%;
+  border: none;
+  padding: 20px;
+  border-radius: 20px;
+  color: var(--color-white);
+  background: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+button.btn h3 {
+  display: inline-block;
+}
+
+button.btn::after {
+  pointer-events: none;
+  z-index: -1;
+  position: absolute;
+  height: 400%;
+  content: '';
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: var(--color-gradient-blue);
+  transition: all 0.3s linear;
+  transform: translateY(-70%);
+}
+
+button.btn:hover::after {
+  transform: translateY(-3%);
+}
