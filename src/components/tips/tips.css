@@ -48,7 +48,7 @@
   width: 70px;
 }
 .mytip_target svg {
-  padding-top: 3px;
+  margin-top: 3px;
   display: block;
 }
 .mytip_btn input {
@@ -78,8 +78,10 @@ input[type='number'] {
   position: relative;
   width: -webkit-fill-available;
 }
-.mytip_label p {
-  z-index: -1;
+.mytip_label p,
+.mytip_label svg {
+  align-items: center;
+  z-index: 0;
   top: 0;
   bottom: 0;
   height: 100%;
@@ -87,11 +89,18 @@ input[type='number'] {
   position: absolute;
   display: flex;
   flex-direction: row;
+}
+.mytip_label p {
   padding-left: 19px;
-  align-items: center;
   color: var(--color-black);
 }
-
+.mytip_label svg {
+  right: 19px;
+  fill: var(--color-blue);
+}
+svg path {
+  pointer-events: none;
+}
 .mytip_label p.empty {
   color: var(--color-gray);
 }

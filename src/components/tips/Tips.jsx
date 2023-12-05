@@ -2,7 +2,7 @@ import { useState } from 'react';
 import TipBtn from './TipBtn';
 
 function Tips() {
-  const [amount, setAmount] = useState('');
+  const [amount, setAmount] = useState(0);
   const [inputOpen, setInputOpen] = useState(true);
   const updateInputOpen = () => {
     setInputOpen(!inputOpen);
@@ -10,12 +10,7 @@ function Tips() {
   const updateUSDValue = (e) => {
     let enteredValue = e.target.value;
 
-    enteredValue = enteredValue.replace(/[^0-9.]/g, '');
-
-    console.log(enteredValue);
-    const formattedValue = enteredValue !== '' ? enteredValue : '';
-
-    setAmount(formattedValue);
+    setAmount(enteredValue);
   };
   const [selected, setSelected] = useState(1);
   const tips = [
@@ -89,13 +84,35 @@ function Tips() {
               0<span className="price-rub">₽</span>
             </p>
           )}
+          <svg
+            onClick={() => setAmount('')}
+            width="19"
+            height="18"
+            viewBox="0 0 19 18"
+            fill="#b5b8ff"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M17.9999 17.5343C17.6094 17.9249 16.9762 17.9249 16.5857 17.5343L0.999925 1.94856C0.609401 1.55804 0.609401 0.924873 0.999925 0.534348C1.39045 0.143824 2.02361 0.143824 2.41414 0.534348L17.9999 16.1201C18.3905 16.5107 18.3904 17.1438 17.9999 17.5343Z"
+              fill="#b5b8ff"
+            />
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M0.999924 17.5343C0.609399 17.1438 0.609401 16.5107 0.999926 16.1201L16.5857 0.534349C16.9762 0.143824 17.6094 0.143824 17.9999 0.534349C18.3904 0.924873 18.3904 1.55804 17.9999 1.94856L2.41414 17.5343C2.02361 17.9249 1.39045 17.9249 0.999924 17.5343Z"
+              fill="#b5b8ff"
+            />
+          </svg>
+
           <input
             value={amount}
             onChange={updateUSDValue}
             autoFocus
             name="tip"
             id="mytip"
-            type="text"
+            type="number"
             min={0}
           />
         </label>
