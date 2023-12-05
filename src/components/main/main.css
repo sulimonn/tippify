@@ -1,60 +1,77 @@
 .main {
   width: 100%;
+  transition: all 0.5s;
 }
 .main__logo_account.commenting {
-  justify-content: space-evenly;
-  flex-direction: row;
-  transition: all 0.5s linear;
+  height: 114px;
 }
 
 .main__logo_account.commenting .main_logo {
   width: 30%;
-  transition: all 0.5s linear;
+  transform: translateX(-50%);
 }
 .main__logo_account.commenting .account {
-  width: auto;
+  width: 90px;
   padding: 20px;
-  transition: all 0.5s linear;
+  right: 80px;
+  /* transform: translateX(100%) translateY(15%); */
 }
 
 .main__logo_account.commenting .account_info {
-  display: none;
-  transition: all 0.5s linear;
+  width: 0px;
+  opacity: 0;
+  pointer-events: none;
+  transition-delay: 0.2s;
+}
+
+.main__logo_account .account_info {
+  transition: all 0.2s linear;
 }
 .main__logo_account {
-  width: fit-content;
+  position: relative;
+  height: 290px;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  align-items: center;
   row-gap: 40px;
   transition: all 0.5s linear;
-  padding-bottom: 40px;
 }
 .main_logo {
   width: 37%;
+  transition: all 0.5s linear;
 }
 .main_logo img {
   width: 100%;
+  transition: all 0.5s linear;
   height: auto;
 }
 .account {
+  position: absolute;
+  bottom: 30px;
+  transition: all 0.5s linear;
   cursor: pointer;
   display: flex;
-  width: -webkit-fill-available;
+  width: 100%;
   justify-content: space-between;
   padding: 20px 30px;
   box-shadow: 0px 5px 30px rgba(22.1, 0, 255, 0.1);
   border-radius: 25px;
+  transform: translate(0);
 }
 .account .text-120 {
   padding-top: 10px;
 }
 .account_logo svg {
+  transition: all 0.5s linear;
+
   height: 50px;
   width: 50px;
 }
 @media screen and (max-width: 440px) {
   .main__logo_account,
+  .feedback,
   .tips h1,
   .tips_btn,
   .mytip_btn {

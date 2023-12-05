@@ -1,6 +1,7 @@
 .tips {
   overflow: visible;
   position: relative;
+  padding-bottom: 120px;
 }
 .tips_btn,
 .mytip_btn {

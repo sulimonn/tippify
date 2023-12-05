@@ -1,0 +1,37 @@
+.feedback {
+  overflow: visible;
+}
+
+.feedback_btns {
+  padding-top: 20px;
+  display: flex;
+  column-gap: 10px;
+  padding-bottom: 10px;
+}
+.feed_btn_item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.feed_btn_item.comment {
+  width: 100% !important;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.feed_btn_item:hover svg,
+.feed_btn_item.active svg {
+  fill: var(--color-white);
+  color: var(--color-white);
+}
+.feed_btn_item:not(.comment) svg {
+  margin-bottom: 5px;
+}
+.feed_btn_item.comment svg {
+  margin-right: 10px;
+}
+.feed_btn_item.comment svg,
+.feed_btn_item svg {
+  color: var(--color-sft-prpl);
+}
