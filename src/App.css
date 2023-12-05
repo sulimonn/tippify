@@ -5,7 +5,11 @@
   background: var(--color-gradient-main);
   z-index: 1;
 }
-
+*,
+::after,
+::before {
+  box-sizing: border-box !important;
+}
 .App .container {
   padding-top: 46px;
   width: 440px;

@@ -52,11 +52,12 @@
   display: block;
 }
 .mytip_btn input {
+  box-sizing: border-box;
   padding: 15px 18px;
   border-radius: 20px;
   border: 2px solid var(--color-blue);
   color: transparent;
-  width: -webkit-fill-available;
+  width: 100%;
   font-size: var(--fs-price);
   font-family: var(--ff);
   background-color: transparent;
