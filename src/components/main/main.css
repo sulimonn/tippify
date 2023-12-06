@@ -2,12 +2,12 @@
   width: 100%;
   transition: all 0.5s;
 }
-.main__logo_account.commenting {
+.main.commenting .main__logo_account {
   height: 114px;
   width: 70%;
 }
 
-.main__logo_account.commenting .main_logo {
+.main.commenting .main_logo {
   width: 120px;
 }
 
@@ -17,13 +17,13 @@
   width: 160px;
   transition: all 0.5s linear;
 }
-.main__logo_account.commenting .account_info {
+.main.commenting .account_info {
   opacity: 0;
   width: 0;
   pointer-events: none;
 }
 
-.main__logo_account.commenting .account {
+.main.commenting .account {
   margin-top: 0;
   width: 90px;
   height: 90px;
@@ -52,8 +52,8 @@
   transition: all 0.5s linear;
   height: auto;
 }
-.account {
-  width: calc(100% - 42px);
+.main .account {
+  width: calc(100%);
   position: absolute;
   bottom: 30px;
   transition: all 0.5s linear;
@@ -83,7 +83,7 @@
     padding-right: 21px;
   }
 
-  .main__logo_account.commenting .account {
+  .main.commenting .account {
     margin-top: 0;
   }
 }

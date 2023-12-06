@@ -11,25 +11,28 @@ function Feedback() {
       id: 1,
       desc: 'bad',
       text: 'Плохо',
+      label: 'Что можно улучшить?',
     },
     {
       id: 2,
       desc: 'good',
       text: 'Хорошо',
+      label: 'Что вам понравилось?',
     },
     {
       id: 3,
       desc: 'like',
       text: 'Отлично',
+      label: 'Что вам понравилось?',
     },
   ];
   const handleFeedback = (item) => {
-    const main = document.querySelector('.main__logo_account');
-    if (item.id === feedback) {
+    const main = document.querySelector('.main');
+    if (item.id === feedback.id) {
       main.classList.remove('commenting');
       setFeedback('');
     } else {
-      setFeedback(item.id);
+      setFeedback(item);
       main.classList.add('commenting');
     }
   };
@@ -40,12 +43,12 @@ function Feedback() {
         {feedbacks.map((item) => (
           <div
             key={item.id}
-            className={'feed_btn_item box' + (item.id === feedback ? ' active' : '')}
+            className={'feed_btn_item box' + (item.id === feedback.id ? ' active' : '')}
             onClick={() => handleFeedback(item)}
           >
             <input
               onChange={() => {}}
-              checked={item.id === feedback}
+              checked={item.id === feedback.id}
               type="radio"
               name="feedback"
               id={item.id}
@@ -57,9 +60,22 @@ function Feedback() {
           </div>
         ))}
       </div>
-      <div className="feed_btn_item box comment" onClick={() => {}}>
-        <Like />
-        <h2>Написать отзыв</h2>
+      <h1 className="comment_label">{feedback.label}</h1>
+      <div
+        className={'feed_btn_item box comment' + (feedback === '' ? '' : ' active')}
+        onClick={() => {}}
+      >
+        <span className="comment_label">
+          <Like />
+          <h2>Написать отзыв</h2>
+        </span>
+        <textarea
+          className="comment_input"
+          type="text"
+          name="feedbackText"
+          id=""
+          placeholder="Напишите отзыв"
+        />
       </div>
     </section>
   );
