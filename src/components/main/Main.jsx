@@ -3,10 +3,11 @@ import Profile from '../../images/svg/Profile';
 import Logo from '../../images/logo/Logo_main2.png';
 import Tips from '../tips/Tips';
 import Feedback from '../feedback/Feedback';
+import Card from '../card/Card';
 
 function Main() {
   return (
-    <div className="main">
+    <form method="post" className="main">
       <section className="main__logo_account">
         <div className="main_logo">
           <img src={Logo} alt="logo" />
@@ -23,7 +24,8 @@ function Main() {
       </section>
       <Tips />
       <Feedback />
-    </div>
+      <Card />
+    </form>
   );
 }
 

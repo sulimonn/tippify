@@ -3,6 +3,7 @@ import './tips.css';
 function TipBtn({ children, selected, setSelected, value }) {
   return (
     <button
+      type="button"
       className={'box' + (value.id === selected ? ' active' : '')}
       onClick={() => setSelected(value.id)}
     >

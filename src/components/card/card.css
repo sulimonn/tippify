@@ -1,0 +1,50 @@
+.card {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15px;
+}
+.confidentiality {
+  width: 85%;
+  display: flex;
+  column-gap: 10px;
+  color: var(--color-black);
+}
+.card .checkbox {
+  position: relative;
+}
+.card .checkbox::after {
+  position: absolute;
+  padding: 0;
+  width: 17px;
+  height: 17px;
+  content: '';
+  top: 3px;
+  left: 2px;
+  right: 2px;
+  bottom: 0;
+  border-radius: 5px;
+  border: 1px solid var(--color-black);
+  pointer-events: none;
+}
+.card .checkbox input {
+  height: 15px;
+  width: 15px;
+  opacity: 0;
+  cursor: pointer;
+}
+.card .checkbox svg {
+  position: absolute;
+  pointer-events: none;
+  left: 7.5px;
+  top: 8px;
+  color: var(--color-black) !important;
+  transition: all 0.3s;
+}
+
+.card .checkbox svg.hide {
+  opacity: 0;
+}

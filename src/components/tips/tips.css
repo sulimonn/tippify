@@ -33,6 +33,10 @@
   border-radius: 19px;
   padding: 12px 15px;
 }
+.tips_btn .box::after,
+.mytip_btn .box::after {
+  border-radius: 19px;
+}
 
 .box input[type='radio' i] {
   pointer-events: none;
@@ -57,11 +61,11 @@
   padding: 15px 18px;
   border-radius: 20px;
   border: 2px solid var(--color-blue);
-  color: transparent;
   width: 100%;
   font-size: var(--fs-price);
   font-family: var(--ff);
   background-color: transparent;
+  color: transparent;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -90,10 +94,10 @@ input[type='number'] {
   position: absolute;
   display: flex;
   flex-direction: row;
+  color: var(--color-black);
 }
 .mytip_label p {
   padding-left: 19px;
-  color: var(--color-black);
 }
 .mytip_label svg {
   right: 19px;
@@ -108,6 +112,10 @@ svg path {
 .mytip_label p span {
   position: relative;
   bottom: -3px;
+}
+
+.mytip_label svg {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 440px) {

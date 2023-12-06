@@ -34,3 +34,7 @@ button.btn::after {
 button.btn:hover::after {
   transform: translateY(-3%);
 }
+button.btn:disabled,
+button.btn:disabled::after {
+  background: var(--color-gray);
+}

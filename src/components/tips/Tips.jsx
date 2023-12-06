@@ -2,15 +2,26 @@ import { useState } from 'react';
 import TipBtn from './TipBtn';
 
 function Tips() {
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(null);
   const [inputOpen, setInputOpen] = useState(true);
   const updateInputOpen = () => {
     setInputOpen(!inputOpen);
-  };
-  const updateUSDValue = (e) => {
-    let enteredValue = e.target.value;
 
+    updateBtn(inputOpen && !amount);
+  };
+  const updateRubValue = (e) => {
+    let enteredValue = e.target.value;
+    updateBtn(enteredValue === null || enteredValue === '');
+    if (enteredValue === '') enteredValue = null;
     setAmount(enteredValue);
+  };
+  const updateBtn = (val) => {
+    const btn = document.querySelector('button.btn');
+    if (val) {
+      btn.disabled = true;
+    } else {
+      btn.disabled = false;
+    }
   };
   const [selected, setSelected] = useState(1);
   const tips = [
@@ -32,7 +43,7 @@ function Tips() {
     },
   ];
   return (
-    <section className="tips">
+    <div className="tips">
       <h1>Чаевые</h1>
       <div className={'tips_btn' + (inputOpen ? ' show' : ' hide')}>
         {tips.map((item) => (
@@ -40,7 +51,7 @@ function Tips() {
             {item.tip}
           </TipBtn>
         ))}
-        <button onClick={updateInputOpen} className="box mytip_target">
+        <button type="button" onClick={updateInputOpen} className="box mytip_target">
           <p className="text-140">
             Ввести свою сумму
             <svg
@@ -59,7 +70,7 @@ function Tips() {
         </button>
       </div>
       <div className={'mytip_btn' + (inputOpen ? ' hide' : ' show')}>
-        <button onClick={updateInputOpen} className="box back">
+        <button type="button" onClick={updateInputOpen} className="box back">
           <svg
             width="20"
             height="14"
@@ -74,18 +85,21 @@ function Tips() {
           </svg>
         </button>
         <label htmlFor="mytip" className="mytip_label">
-          {amount ? (
+          {amount === null ? (
+            <p className="price-large empty">
+              0<span className="price-rub">₽</span>
+            </p>
+          ) : (
             <p className="price-large">
               {amount}
               <span className="price-rub">₽</span>
             </p>
-          ) : (
-            <p className="price-large empty">
-              0<span className="price-rub">₽</span>
-            </p>
           )}
           <svg
-            onClick={() => setAmount('')}
+            onClick={() => {
+              setAmount(null);
+              updateBtn(true);
+            }}
             width="19"
             height="18"
             viewBox="0 0 19 18"
@@ -107,8 +121,9 @@ function Tips() {
           </svg>
 
           <input
-            value={amount}
-            onChange={updateUSDValue}
+            required={!inputOpen && amount === 0}
+            value={parseInt(amount)}
+            onChange={updateRubValue}
             autoFocus
             name="tip"
             id="mytip"
@@ -117,7 +132,7 @@ function Tips() {
           />
         </label>
       </div>
-    </section>
+    </div>
   );
 }
 
