@@ -21,7 +21,7 @@
 }
 @media screen and (max-width: 440px) {
   .login {
-    min-height: calc(100vh);
+    min-height: calc(100vh - 20vh);
     padding-left: 21px;
     overflow: visible;
     padding-right: 21px;
