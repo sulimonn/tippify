@@ -3,14 +3,15 @@ import Logo from './images/logo/Logo_main2.png';
 import './App.css';
 import Main from './components/main/Main';
 import './components/utils/btn/btn.css';
+import Admin from './components/admin/Admin';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   const [didMount, setDidMount] = useState(false);
   useEffect(() => {
     setDidMount(true);
   }, []);
-
-  if (!didMount) {
+  if (didMount === false) {
     return (
       <div className="App">
         <div className="container">
@@ -23,11 +24,16 @@ function App() {
     );
   }
   return (
-    <div className="App">
-      <div className="container">
-        <Main />
+    <BrowserRouter>
+      <div className="App">
+        <div className="container">
+          <Routes>
+            <Route index element={<Main />} />
+            <Route path="/admin" element={<Admin />} />
+          </Routes>
+        </div>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
