@@ -1,40 +1,41 @@
-import { useEffect, useState } from 'react';
-import Logo from './images/logo/Logo_main2.png';
+import React from 'react';
 import './App.css';
 import Main from './components/main/Main';
 import './components/utils/btn/btn.css';
 import Admin from './components/admin/Admin';
+import Login from './components/admin/login/Login';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Loader from './components/Loader';
 
-function App() {
-  const [didMount, setDidMount] = useState(false);
-  useEffect(() => {
-    setDidMount(true);
-  }, []);
-  if (didMount === false) {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      didMount: true,
+    };
+  }
+  componentDidMount() {
+    this.setState({ didMount: false });
+  }
+  render() {
+    if (this.state.didMount) {
+      return <Loader />;
+    }
     return (
-      <div className="App">
-        <div className="container">
-          <div className="loading">
-            <img className="logo" src={Logo} alt="logo" />
-            <h3 className="h3">Чаевые онлайн</h3>
+      <BrowserRouter>
+        <div className="App">
+          <div className="container">
+            <Routes>
+              <Route index element={<Main />} />
+              <Route path="/admin" element={<Admin />} />
+              <Route path="/admin" element={<Admin />} />
+              <Route path="/login" element={<Login />} />
+            </Routes>
           </div>
         </div>
-      </div>
+      </BrowserRouter>
     );
   }
-  return (
-    <BrowserRouter>
-      <div className="App">
-        <div className="container">
-          <Routes>
-            <Route index element={<Main />} />
-            <Route path="/admin" element={<Admin />} />
-          </Routes>
-        </div>
-      </div>
-    </BrowserRouter>
-  );
 }
 
 export default App;
