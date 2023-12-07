@@ -53,11 +53,9 @@
     min-height: fit-content;
   }
   .App .container {
-    min-height: fit-content;
     height: 100%;
     width: -webkit-fill-available;
     margin: 0;
-    overflow: hidden;
   }
   .feedback {
     padding-bottom: 200px;
