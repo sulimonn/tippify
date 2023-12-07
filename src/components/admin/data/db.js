@@ -16,31 +16,27 @@ const data = {
     },
     {
       id: 3,
-      name: 'Alice Smith',
+      name: 'Юлия Пирогова',
       phone: '+996 770 180 302',
       password: '1234',
       position: 'waiter',
+      restaurant: 1,
     },
     {
       id: 4,
-      name: 'Bob Johnson',
+      name: 'Сергей Козлов',
       phone: '+996 770 190 303',
       password: '1234',
       position: 'waiter',
+      restaurant: 1,
     },
   ],
   restaurants: [
     {
       id: 1,
-      name: 'Restaurant A',
-      location: 'City X',
-      admin: '2',
-    },
-    {
-      id: 2,
-      name: 'Restaurant B',
-      location: 'City Y',
-      admin: '2',
+      title: 'Ресторан Метрополь',
+      location: 'Москва, ул. Лесная 123',
+      admin: 2,
     },
   ],
 };

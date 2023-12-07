@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import Logo from '../../../images/logo/Logo_main2.png';
 import Button from '../../utils/btn/Button';
 import './login.css';
 import data from '../data/db';
 import { setUser, user } from '../data/user';
 import { useNavigate } from 'react-router-dom';
-import { setAuth, isAuth } from '../auth';
+import { setAuth } from '../auth';
+import Logo from '../../utils/logo/Logo';
 
 function Login() {
   const [phone, setPhone] = useState('');
@@ -20,13 +20,9 @@ function Login() {
       redirect('/' + user.position);
     }
   };
-  console.log(isAuth);
   return (
     <form onSubmit={handleLogin} className="login">
-      <div className="logo">
-        <img src={Logo} alt="" />
-        <p className="text-140">Административный доступ</p>
-      </div>
+      <Logo />
       <div className="input-group">
         <input
           required

@@ -1,0 +1,26 @@
+.logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 7px;
+  padding-bottom: 20px;
+}
+.login .logo {
+  gap: 10px;
+}
+.login .logo img {
+  width: 40%;
+}
+.logo img {
+  width: 25%;
+}
+@media screen and (max-width: 440px) {
+  .login {
+    min-height: calc(100vh - 20vh);
+    padding-left: 21px;
+    overflow: visible;
+    padding-right: 21px;
+  }
+}

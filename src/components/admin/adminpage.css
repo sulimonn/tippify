@@ -1,0 +1,87 @@
+.adminpage {
+  min-height: 90vh;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  transition: all 0.2s;
+}
+.animation {
+  height: 100%;
+  opacity: 1;
+  transition: all 0.6s;
+}
+.animation.hide {
+  pointer-events: none;
+  height: 0;
+  opacity: 0;
+}
+.form {
+  transition: all 0.2s;
+  padding: 21px 0;
+}
+.title {
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+.gray {
+  color: var(--color-gray);
+}
+.box_white {
+  padding: 21px 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.focusable:focus,
+.focusable:focus-within,
+.focusable:focus-visible {
+  outline: 0.2px solid var(--color-sft-prpl);
+}
+.box_white .info {
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: right;
+}
+.box_white .text-120 {
+  color: var(--color-gray);
+  text-transform: capitalize;
+}
+
+.adminpage h2 {
+  font-weight: 700;
+}
+.adminpage .list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-direction: column;
+  transition: all 0.2s;
+}
+.waiters {
+  transition: all 0.2s;
+  cursor: default;
+}
+.delete {
+  padding: 0;
+  margin-top: 5px;
+  border: 0;
+  background: none;
+  color: var(--color-blue);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 440px) {
+  .adminpage {
+    padding-left: 21px;
+    padding-right: 21px;
+  }
+}

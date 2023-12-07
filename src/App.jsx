@@ -1,11 +1,12 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Main from './components/main/Main';
-import './components/utils/btn/btn.css';
 import Admin from './components/admin/Admin';
 import Login from './components/admin/login/Login';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Loader from './components/Loader';
+import './components/admin/adminpage.css';
+import './components/utils/btn/btn.css';
+import './App.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class App extends React.Component {
   componentDidMount() {
     this.setState({ didMount: false });
   }
+
   render() {
     if (this.state.didMount) {
       return <Loader />;
