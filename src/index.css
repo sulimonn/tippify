@@ -108,7 +108,7 @@ h3 {
   width: fit-content;
   padding: 25px;
   border: none;
-  background: transparent;
+  background-color: var(--color-white);
   color: var(--color-black);
   position: relative;
   transition: all 0.2s;
@@ -136,10 +136,14 @@ h3 {
   background: var(--color-gradient);
   transition: all 0.2s;
 }
+.box h2 {
+  transition: all 0.1s !important;
+}
 .box:hover::after {
   opacity: 1;
 }
 .box:hover {
+  z-index: 1;
   color: var(--color-white);
 }
 
