@@ -90,6 +90,8 @@
 
   .main.commenting .account {
     margin-top: 0;
+    left: unset;
+    right: unset;
   }
   .account {
     width: auto !important;
