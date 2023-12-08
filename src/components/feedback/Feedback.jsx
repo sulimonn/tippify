@@ -2,6 +2,7 @@ import './feedback.css';
 import ThumbsDown from '../utils/svg/ThumbsDown';
 import ThumbsUp from '../utils/svg/ThumbsUp';
 import Like from '../utils/svg/Like';
+import Comment from '../utils/svg/Comment';
 import { useState } from 'react';
 
 function Feedback() {
@@ -66,7 +67,7 @@ function Feedback() {
         onClick={() => {}}
       >
         <span className="comment_label">
-          <Like />
+          <Comment />
           <h2>Написать отзыв</h2>
         </span>
         <textarea

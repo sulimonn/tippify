@@ -20,7 +20,7 @@ function Restaurant({ data, rest, setRest }) {
     } else {
       e.target.focus();
       setFocus(true);
-      if (waiters) waiters.forEach((item) => item.classList.remove('hide'));
+      if (waiters) waiters.forEach((item) => item.classList.add('hide'));
     }
   };
   return rest === undefined ? (
