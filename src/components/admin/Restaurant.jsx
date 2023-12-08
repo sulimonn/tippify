@@ -16,11 +16,11 @@ function Restaurant({ data, rest, setRest }) {
     if (focus) {
       e.target.blur();
       setFocus(false);
-      if (waiters) waiters.forEach((item) => item.classList.add('hide'));
+      if (waiters) waiters.forEach((item) => item.classList.remove('hide'));
     } else {
       e.target.focus();
       setFocus(true);
-      if (waiters) waiters.forEach((item) => item.classList.add('hide'));
+      if (waiters) waiters.forEach((item) => item.classList.remove('hide'));
     }
   };
   return rest === undefined ? (
