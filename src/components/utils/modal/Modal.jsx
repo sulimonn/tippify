@@ -3,7 +3,6 @@ import './modal.css';
 function Modal({ children }) {
   const hideModal = (e) => {
     e.target.parentNode.parentNode.classList.remove('open');
-    console.log(e.target);
   };
   return (
     <div className="modal">

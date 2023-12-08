@@ -6,7 +6,7 @@ import Logo from '../utils/logo/Logo';
 import Profile from '../../images/svg/Profile';
 import data from './data/db';
 import Restaurant from './Restaurant';
-import Waiter from './waiter/Waiter';
+import WaiterList from './waiter/WaiterList';
 import Modal from '../utils/modal/Modal';
 import AddWaiter from './waiter/addWaiter';
 
@@ -38,7 +38,7 @@ const Admin = () => {
           <div className="box_white">
             <div className="info">
               <h2>{user.name}</h2>
-              <p className="text-120">{user.position}</p>
+              <p className="text-120">{user.position_title}</p>
             </div>
             <div className="icon">
               <Profile />
@@ -46,7 +46,7 @@ const Admin = () => {
           </div>
           <Restaurant data={data} rest={restaurant} setRest={setRestaurant} />
           {restaurant !== undefined && (
-            <Waiter restaurant={restaurant} waiters={waiters} setWaiters={setWaiters} />
+            <WaiterList restaurant={restaurant} waiters={waiters} setWaiters={setWaiters} />
           )}
         </section>
         {restaurant !== undefined && (

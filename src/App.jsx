@@ -8,6 +8,7 @@ import './components/admin/adminpage.css';
 import './components/utils/btn/btn.css';
 import './App.css';
 import Moderator from './components/moderator/Moderator';
+import Waiter from './components/waiter/Waiter';
 
 class App extends React.Component {
   constructor(props) {
@@ -32,6 +33,7 @@ class App extends React.Component {
               <Route index element={<Main />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/moderator" element={<Moderator />} />
+              <Route path="/waiter" element={<Waiter />} />
               <Route path="/login" element={<Login />} />
             </Routes>
           </div>

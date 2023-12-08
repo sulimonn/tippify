@@ -7,6 +7,21 @@
   flex-direction: column;
   gap: 20px;
   transition: all 0.2s;
+  padding-bottom: 36px;
+}
+.adminpage .box,
+.box_white {
+  padding: 21px 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form {
+  height: auto;
+  transition: all 0.2s;
+  padding: 21px 0;
 }
 .animation {
   height: 100%;
@@ -18,24 +33,12 @@
   height: 0;
   opacity: 0;
 }
-.form {
-  height: auto;
-  transition: all 0.2s;
-  padding: 21px 0;
-}
 .title {
   margin-top: 25px;
   margin-bottom: 10px;
 }
 .gray {
   color: var(--color-gray);
-}
-.box_white {
-  padding: 21px 30px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 .focusable:focus,
 .focusable:focus-within,
@@ -44,12 +47,14 @@
 }
 .box_white .info {
   display: flex;
-  gap: 5px;
-  justify-content: space-between;
+  justify-content: space-evenly;
   height: 100%;
   flex-direction: column;
   align-items: flex-start;
   text-align: right;
+}
+.focusable .info {
+  gap: 5px;
 }
 .box_white .text-120 {
   color: var(--color-gray);
@@ -68,7 +73,7 @@
   transition: all 0.2s;
 }
 .waiters {
-  transition: all 0.2s;
+  transition: all 0.3s;
   cursor: default;
 }
 .delete {
@@ -79,10 +84,77 @@
   color: var(--color-blue);
   cursor: pointer;
 }
+.waiter_card {
+  width: 100%;
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.waiter_card .input-group {
+  flex-direction: row;
+  display: flex;
+  text-align: center;
+}
+.waiter_card input:nth-child(1) {
+  flex: 5;
+}
+
+.waiter_card input:nth-child(2) {
+  flex: 1.5;
+}
+
+.waiter_card input:nth-child(3) {
+  flex: 1;
+}
+.waiter_card .btn {
+  margin-top: 0 !important;
+}
+.waiter_card .form {
+  padding-top: 0;
+}
+.waiter_card .box_white {
+  margin-top: 10px;
+}
+.adminpage .animation {
+  height: auto;
+  transition: all 0.5s;
+}
+.waiters {
+}
+.adminpage .hide {
+  opacity: 0;
+  transform: translateX(-100vw);
+}
 
 @media screen and (max-width: 440px) {
   .adminpage {
     padding-left: 21px;
     padding-right: 21px;
+  }
+  .waiter_card .input-group {
+    gap: 14px;
+  }
+  .waiter_card input:nth-child(1) {
+    flex: 4.85;
+  }
+
+  .waiter_card input:nth-child(2) {
+    flex: 1.55;
+  }
+  .waiter_card input:nth-child(n) {
+    font-size: calc(var(--fs-h3) - 1px);
+  }
+}
+@media screen and (max-width: 415px) {
+  .waiter_card input:nth-child(n) {
+    font-size: calc(var(--fs-h3) - 1.5px) !important;
+  }
+}
+@media screen and (max-width: 390px) {
+  .waiter_card input:nth-child(n) {
+    padding: 16px;
+    font-size: calc(var(--fs-h3) - 3px) !important;
   }
 }

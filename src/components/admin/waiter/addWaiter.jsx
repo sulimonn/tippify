@@ -5,11 +5,21 @@ function AddWaiter({ waiters, setWaiters, restaurant }) {
   const [waiter, setWaiter] = useState({
     id: (Math.random() * 100).toFixed(0),
     restaurant: restaurant.id,
+    positiion_title: 'Официант',
+    position: 'waiter',
   });
   const handleSubmit = (e) => {
     e.preventDefault();
-    setWaiter({ ...waiter });
     setWaiters([...waiters, waiter]);
+    setWaiter({
+      id: (Math.random() * 100).toFixed(0),
+      restaurant: restaurant.id,
+      positiion_title: 'Официант',
+      position: 'waiter',
+      name: '',
+      phone: '',
+      password: '',
+    });
     console.log(waiters);
     const modal = document.querySelector('.modal');
     if (modal) modal.classList.remove('open');
