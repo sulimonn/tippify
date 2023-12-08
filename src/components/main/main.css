@@ -83,12 +83,17 @@
   .feedback,
   .tips h1,
   .tips_btn,
-  .mytip_btn {
+  .mytip_btnt {
     padding-left: 21px;
     padding-right: 21px;
   }
 
   .main.commenting .account {
     margin-top: 0;
+  }
+  .account {
+    width: auto !important;
+    left: 21px;
+    right: 21px;
   }
 }
