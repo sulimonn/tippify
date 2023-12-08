@@ -18,7 +18,7 @@ function Waiter({ restaurant, waiters, setWaiters }) {
   return waiters.length === 0 ? (
     <AddWaiter restaurant={restaurant} setWaiters={setWaiters} waiters={waiters} />
   ) : (
-    <div className="list animation hide">
+    <div className="list animation ">
       <h2 className="title gray">Официанты</h2>
       {waiters.map((item) => (
         <div key={item.id} className="box_white waiters">

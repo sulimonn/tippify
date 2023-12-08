@@ -16,7 +16,7 @@ function AddWaiter({ waiters, setWaiters, restaurant }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form animation hide">
+    <form onSubmit={handleSubmit} className="form animation ">
       <h2>Добавьте официанта</h2>
       <div className="input-group">
         <input
