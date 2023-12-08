@@ -4,7 +4,10 @@ import { user } from './data/user';
 import Location from '../../images/svg/Location';
 
 function Restaurant({ data, rest, setRest }) {
-  const [restaurant, setRestaurant] = useState({ admin: user.id });
+  const [restaurant, setRestaurant] = useState({
+    admin: user.id,
+    id: (Math.random() * 100).toFixed(0),
+  });
   const [focus, setFocus] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
