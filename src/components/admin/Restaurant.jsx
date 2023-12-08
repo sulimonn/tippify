@@ -47,6 +47,22 @@ function Restaurant({ data, rest, setRest }) {
           value={restaurant.location}
           onChange={(e) => setRestaurant({ ...restaurant, location: e.target.value })}
         />
+        <input
+          required
+          type="text"
+          placeholder="Логин"
+          name="login"
+          value={restaurant.login}
+          onChange={(e) => setRestaurant({ ...restaurant, login: e.target.value })}
+        />
+        <input
+          required
+          type="password"
+          placeholder="Пароль"
+          name="password"
+          value={restaurant.password}
+          onChange={(e) => setRestaurant({ ...restaurant, password: e.target.value })}
+        />
       </div>
       <Button>Добавить</Button>
     </form>
