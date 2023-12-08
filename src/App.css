@@ -6,7 +6,7 @@
   background: var(--color-gradient-main);
   z-index: 1;
   display: flex;
-  overflow: hidden;
+  overflow: scroll;
 }
 .App .container {
   position: relative;
