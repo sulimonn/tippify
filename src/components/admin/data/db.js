@@ -36,7 +36,7 @@ const data = {
       id: 1,
       title: 'Ресторан Метрополь',
       location: 'Москва, ул. Лесная 123',
-      admin: 2,
+      admin: 3,
     },
   ],
 };
