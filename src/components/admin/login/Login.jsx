@@ -20,6 +20,25 @@ function Login() {
       redirect('/' + user.position);
     }
   };
+  const submit = (v) => {
+    switch (v) {
+      case 'w':
+        setPhone('+996 770 180 302');
+        setPassword('1234');
+        break;
+      case 'a':
+        setPhone('+1234567890');
+        setPassword('5678');
+        break;
+      case 'm':
+        setPhone('+996 770 190 302');
+        setPassword('1234');
+        break;
+
+      default:
+        break;
+    }
+  };
   return (
     <form onSubmit={handleLogin} className="login">
       <Logo />
@@ -42,6 +61,17 @@ function Login() {
         />
       </div>
       <Button>Войти</Button>
+      <div className="logging">
+        <div className="box" onClick={() => submit('w')}>
+          <div className="price-large">Официант</div>
+        </div>
+        <div className="box" onClick={() => submit('a')}>
+          <div className="price-large">Админстратор</div>
+        </div>
+        <div className="box" onClick={() => submit('m')}>
+          <div className="price-large">Модератор</div>
+        </div>
+      </div>
     </form>
   );
 }
