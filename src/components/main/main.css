@@ -8,12 +8,12 @@
   overflow-x: visible;
 }
 .main.commenting .main__logo_account {
-  height: 114px;
+  height: 104px;
   width: 70%;
 }
 
 .main.commenting .main_logo {
-  width: 120px;
+  width: 95px;
 }
 
 .main_logo {
@@ -30,7 +30,7 @@
 
 .main.commenting .account {
   margin-top: 0;
-  width: 90px;
+  width: 90px !important;
   height: 90px;
   padding: 20px;
   margin-left: 270px;
@@ -89,13 +89,8 @@
   }
 
   .main.commenting .account {
-    margin-top: 0;
-    left: unset;
-    right: unset;
   }
   .account {
-    width: auto !important;
-    left: 21px;
-    right: 21px;
+    width: 90% !important;
   }
 }

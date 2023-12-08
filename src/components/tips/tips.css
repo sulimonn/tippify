@@ -123,4 +123,27 @@ svg path {
     width: -webkit-fill-available;
     overflow-x: scroll;
   }
+  .tips_btn .box {
+    padding: 10px 13px;
+  }
+  .price-large {
+    font-size: calc(var(--fs-price) - 1px);
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .tips_btn .box {
+    padding: 8px 12px;
+  }
+  .price-large {
+    font-size: calc(var(--fs-price) - 2px);
+  }
+}
+@media screen and (max-width: 380px) {
+  .tips_btn .box {
+    padding: 8px 11px;
+  }
+  .price-large {
+    font-size: calc(var(--fs-price) - 3px);
+  }
 }
