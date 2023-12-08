@@ -5,6 +5,7 @@
   min-height: calc(100dvh - 21px);
   transition: all 0.5s;
   box-sizing: border-box !important;
+  overflow-x: visible;
 }
 .main.commenting .main__logo_account {
   height: 114px;

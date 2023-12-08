@@ -20,11 +20,13 @@ const Admin = () => {
     }
   }, [redirect]);
   useEffect(() => {
-    setRestaurant(data.restaurants.find((item) => parseInt(user.id) === parseInt(item.admin)));
-    if (restaurant !== undefined) {
-      setWaiters(
-        data.users.filter((item) => parseInt(restaurant.id) === parseInt(item.restaurant)),
-      );
+    if (isAuth) {
+      setRestaurant(data.restaurants.find((item) => parseInt(user.id) === parseInt(item.admin)));
+      if (restaurant !== undefined) {
+        setWaiters(
+          data.users.filter((item) => parseInt(restaurant.id) === parseInt(item.restaurant)),
+        );
+      }
     }
   }, [restaurant]);
   if (isAuth) {

@@ -1,4 +1,4 @@
-let isAuth = true;
+let isAuth = false;
 const setAuth = (val) => {
   isAuth = val;
 };
