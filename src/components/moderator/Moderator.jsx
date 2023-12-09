@@ -53,7 +53,7 @@ function Moderator() {
           {admins.length === 0 ? (
             <AddAdmin admins={admins} setAdmins={setAdmins} />
           ) : (
-            <div className="list animation ">
+            <div className="list ">
               <h2 className="title gray">Администраторы</h2>
               {admins.map((item) => (
                 <div key={item.id} className="box_white waiters">

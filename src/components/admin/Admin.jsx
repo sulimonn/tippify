@@ -12,6 +12,7 @@ import AddWaiter from './waiter/addWaiter';
 import AddRestaurant from './restaurant/AddRestaurant';
 
 const Admin = () => {
+  const [click, setClick] = useState(false);
   const [focused, setFocused] = useState(null);
   const redirect = useNavigate();
   const [restaurants, setRestaurants] = useState([]);
@@ -69,9 +70,15 @@ const Admin = () => {
             />
           ) : (
             <>
-              <Restaurant setFocused={setFocused} focused={focused} restaurants={restaurants} />
+              <Restaurant
+                setClick={setClick}
+                setFocused={setFocused}
+                focused={focused}
+                restaurants={restaurants}
+              />
 
               <WaiterList
+                click={click}
                 focused={focused}
                 restaurants={restaurants}
                 waiters={waiters}

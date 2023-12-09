@@ -1,16 +1,23 @@
 import Location from '../../../images/svg/Location';
 import Button from '../../utils/btn/Button';
 
-function Restaurant({ restaurants, focused, setFocused }) {
+function Restaurant({ setClick, restaurants, focused, setFocused }) {
   const handleFocus = (e) => {
     const currentFocused = parseInt(e.target.dataset.restId);
 
     if (focused === currentFocused) {
-      setFocused(null);
+      setTimeout(() => {
+        setFocused(null);
+        setClick(false);
+      }, 600);
+      setClick(true);
     } else {
-      setFocused(currentFocused);
+      setClick(true);
+      setTimeout(() => {
+        setClick(false);
+        setFocused(currentFocused);
+      }, 600);
     }
-    console.log(focused);
   };
   const handleClick = (e) => {
     e.preventDefault();

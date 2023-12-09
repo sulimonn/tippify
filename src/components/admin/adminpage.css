@@ -17,6 +17,9 @@
   align-items: center;
   justify-content: space-between;
 }
+.list {
+  width: 100%;
+}
 
 .form {
   height: auto;
@@ -169,17 +172,19 @@
     flex: 1.55;
   }
   .waiter_card input:nth-child(n) {
+    padding: 16px 15px;
     font-size: calc(var(--fs-h3) - 1px);
   }
 }
 @media screen and (max-width: 415px) {
   .waiter_card input:nth-child(n) {
-    font-size: calc(var(--fs-h3) - 1.5px) !important;
+    padding: 16px 13px;
+    font-size: calc(var(--fs-h3) - 1px) !important;
   }
 }
 @media screen and (max-width: 390px) {
   .waiter_card input:nth-child(n) {
-    padding: 16px;
-    font-size: calc(var(--fs-h3) - 3px) !important;
+    padding: 16px 12px;
+    font-size: calc(var(--fs-h3) - 1px) !important;
   }
 }

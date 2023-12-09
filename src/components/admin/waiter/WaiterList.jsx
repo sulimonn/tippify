@@ -4,26 +4,13 @@ import AddWaiter from './addWaiter';
 import { useEffect, useState } from 'react';
 import { Animate } from '../../Animate';
 
-function WaiterList({ waiters, setWaiters, focused }) {
+function WaiterList({ click, waiters, setWaiters, focused }) {
   const [focusedWaiters, setFocusedWaiters] = useState([]);
   useEffect(() => {
     if (focused) {
       setFocusedWaiters(waiters.filter((waiter) => parseInt(waiter.restaurant) === focused));
     }
   }, [focused, waiters]);
-  useEffect(() => {
-    if (document.querySelector('.waiters_list') && focusedWaiters.length !== 0) {
-      console.log(focused);
-      setTimeout(() => {
-        console.log(focused);
-        if (focused === null) {
-          document.querySelector('.waiters_list').classList.add('hiding');
-        } else {
-          document.querySelector('.waiters_list').classList.remove('hiding');
-        }
-      }, 100);
-    }
-  }, [focused, focusedWaiters.length]);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -43,16 +30,16 @@ function WaiterList({ waiters, setWaiters, focused }) {
         }
       });
     }
-    console.log(e.target.parentNode.parentNode.classList.add('hiding'));
+    e.target.parentNode.parentNode.classList.add('hiding');
     setTimeout(() => {
       setWaiters(waiters.filter((item) => parseInt(item.id) !== parseInt(e.target.dataset.id)));
     }, 400);
   };
-
+  console.log(click);
   return focusedWaiters.length === 0 ? (
     <AddWaiter isModal={false} focused={focused} setWaiters={setWaiters} waiters={waiters} />
   ) : (
-    <div className={'waiters_list ' + (focused !== null ? ' hiding' : ' hide')}>
+    <div className={'waiters_list ' + (click ? ' hiding' : focused !== null ? '' : ' hide')}>
       <h2 className="title gray">Официанты</h2>
       {focusedWaiters.map((item) => (
         <div
