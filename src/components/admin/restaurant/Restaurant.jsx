@@ -10,6 +10,7 @@ function Restaurant({ restaurants, focused, setFocused }) {
     } else {
       setFocused(currentFocused);
     }
+    console.log(focused);
   };
   const handleClick = (e) => {
     e.preventDefault();
@@ -22,7 +23,9 @@ function Restaurant({ restaurants, focused, setFocused }) {
     <div className="restaurants_list">
       {restaurants.map((restaurant, i) => (
         <div
-          className={'box_white focusable ' + (focused === restaurant.id ? ' focused' : '')}
+          className={
+            'box_white focusable ' + (focused === parseInt(restaurant.id) ? ' focused' : '')
+          }
           data-rest-id={restaurant.id}
           data-type="rest"
           onClick={handleFocus}

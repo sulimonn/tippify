@@ -12,16 +12,18 @@ function WaiterList({ waiters, setWaiters, focused }) {
     }
   }, [focused, waiters]);
   useEffect(() => {
-    setTimeout(() => {
-      if (document.querySelector('.waiters_list')) {
+    if (document.querySelector('.waiters_list') && focusedWaiters.length !== 0) {
+      console.log(focused);
+      setTimeout(() => {
+        console.log(focused);
         if (focused === null) {
           document.querySelector('.waiters_list').classList.add('hiding');
         } else {
           document.querySelector('.waiters_list').classList.remove('hiding');
         }
-      }
-    }, 100);
-  }, [focused]);
+      }, 100);
+    }
+  }, [focused, focusedWaiters.length]);
 
   const handleClick = (e) => {
     e.preventDefault();

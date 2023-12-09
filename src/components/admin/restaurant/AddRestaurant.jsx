@@ -2,19 +2,22 @@ import { useState } from 'react';
 import { user } from '../data/user';
 import Button from '../../utils/btn/Button';
 
-function AddRestaurant({ restaurants, setRestaurants, focused }) {
+function AddRestaurant({ restaurants, setRestaurants, focused, setFocused }) {
   const [restaurant, setRestaurant] = useState({
     admin: user.id,
     id: (Math.random() * 100).toFixed(0),
   });
   const handleSubmit = (e) => {
+    setFocused(parseInt(restaurant.id));
     e.preventDefault();
-    const modal = document.querySelector('.addrest');
-    if (modal) {
-      modal.classList.add('hidden');
-    }
 
+    const modal = document.querySelector('.modal');
+    if (modal) modal.classList.remove('open');
     setRestaurants([...restaurants, restaurant]);
+    setRestaurant({
+      admin: user.id,
+      id: (Math.random() * 100).toFixed(0),
+    });
   };
   return (
     <form onSubmit={handleSubmit} className={'form' + (focused !== null ? ' hidden' : '')}>

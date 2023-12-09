@@ -62,6 +62,7 @@ const Admin = () => {
           </div>
           {restaurants.length === 0 ? (
             <AddRestaurant
+              setFocused={setFocused}
               focused={focused}
               restaurants={restaurants}
               setRestaurants={setRestaurants}
@@ -81,6 +82,7 @@ const Admin = () => {
         </section>
         <Modal>
           <AddRestaurant
+            setFocused={setFocused}
             focused={focused}
             restaurants={restaurants}
             setRestaurants={setRestaurants}

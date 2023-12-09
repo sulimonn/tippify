@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Button from '../../utils/btn/Button';
 
 function AddWaiter({ focused, waiters, setWaiters, isModal = true }) {
@@ -23,18 +23,8 @@ function AddWaiter({ focused, waiters, setWaiters, isModal = true }) {
     if (modal) modal.classList.remove('open');
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      const hiding = document.getElementById('waiter_form');
-      if (hiding) hiding.classList.remove('hiding');
-    }, 100);
-  }, []);
   return (
-    <form
-      id={isModal ? '' : 'waiter_form'}
-      onSubmit={handleSubmit}
-      className={'form ' + (focused ? ' hiding' : ' hidden')}
-    >
+    <form onSubmit={handleSubmit} className={'form ' + (focused ? ' ' : ' hidden')}>
       <h2>Добавьте официанта</h2>
       <div className="input-group">
         <input
