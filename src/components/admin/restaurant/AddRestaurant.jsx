@@ -1,33 +1,23 @@
 import { useState } from 'react';
-import Button from '../utils/btn/Button';
-import { user } from './data/user';
-import Location from '../../images/svg/Location';
+import { user } from '../data/user';
+import Button from '../../utils/btn/Button';
 
-function Restaurant({ data, rest, setRest }) {
+function AddRestaurant({ restaurants, setRestaurants, focused }) {
   const [restaurant, setRestaurant] = useState({
     admin: user.id,
     id: (Math.random() * 100).toFixed(0),
   });
-  const [focus, setFocus] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
-    data.restaurants.push({ ...restaurant });
-    setRest(restaurant);
-  };
-  const handleFocus = (e) => {
-    const waiters = document.querySelectorAll('.animation');
-    if (focus) {
-      e.target.blur();
-      setFocus(false);
-      if (waiters) waiters.forEach((item) => item.classList.remove('hide'));
-    } else {
-      e.target.focus();
-      setFocus(true);
-      if (waiters) waiters.forEach((item) => item.classList.remove('hide'));
+    const modal = document.querySelector('.addrest');
+    if (modal) {
+      modal.classList.add('hidden');
     }
+
+    setRestaurants([...restaurants, restaurant]);
   };
-  return rest === undefined ? (
-    <form onSubmit={handleSubmit} className="form">
+  return (
+    <form onSubmit={handleSubmit} className={'form' + (focused !== null ? ' hidden' : '')}>
       <h2>Добавьте ресторан</h2>
 
       <div className="input-group">
@@ -66,23 +56,7 @@ function Restaurant({ data, rest, setRest }) {
       </div>
       <Button>Добавить</Button>
     </form>
-  ) : (
-    <div
-      className="box_white focusable"
-      data-rest-id={rest.id}
-      data-type="rest"
-      onClick={handleFocus}
-      tabIndex={0}
-    >
-      <div className="info">
-        <h2>{rest.title}</h2>
-        <p className="text-120">{rest.location}</p>
-      </div>
-      <div className="icon">
-        <Location />
-      </div>
-    </div>
   );
 }
 
-export default Restaurant;
+export default AddRestaurant;

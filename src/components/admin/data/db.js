@@ -34,13 +34,28 @@ const data = {
       position: 'waiter',
       restaurant: 1,
     },
+    {
+      id: 5,
+      name: 'Петр Петров',
+      phone: '+996',
+      position_title: 'Официант',
+      password: '1234',
+      position: 'waiter',
+      restaurant: 3,
+    },
   ],
   restaurants: [
     {
       id: 1,
       title: 'Ресторан Метрополь',
       location: 'Москва, ул. Лесная 123',
-      admin: 5,
+      admin: 2,
+    },
+    {
+      id: 3,
+      title: 'Ресторан Мертвые души',
+      location: 'Москва, ул. Лесная 123',
+      admin: 2,
     },
   ],
   cards: [

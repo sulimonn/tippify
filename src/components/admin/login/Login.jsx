@@ -63,13 +63,13 @@ function Login() {
       <Button>Войти</Button>
       <div className="logging">
         <div className="box" onClick={() => submit('w')}>
-          <div className="price-large">Официант</div>
+          <h3>Официант</h3>
         </div>
         <div className="box" onClick={() => submit('a')}>
-          <div className="price-large">Админстратор</div>
+          <h3>Админстратор</h3>
         </div>
         <div className="box" onClick={() => submit('m')}>
-          <div className="price-large">Модератор</div>
+          <h3>Модератор</h3>
         </div>
       </div>
     </form>

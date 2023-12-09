@@ -1,32 +1,40 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from '../../utils/btn/Button';
 
-function AddWaiter({ waiters, setWaiters, restaurant }) {
+function AddWaiter({ focused, waiters, setWaiters, isModal = true }) {
   const [waiter, setWaiter] = useState({
     id: (Math.random() * 100).toFixed(0),
-    restaurant: restaurant.id,
     positiion_title: 'Официант',
     position: 'waiter',
   });
   const handleSubmit = (e) => {
     e.preventDefault();
-    setWaiters([...waiters, waiter]);
+    setWaiters([...waiters, { ...waiter, restaurant: focused }]);
     setWaiter({
       id: (Math.random() * 100).toFixed(0),
-      restaurant: restaurant.id,
+      restaurant: focused,
       positiion_title: 'Официант',
       position: 'waiter',
       name: '',
       phone: '',
       password: '',
     });
-    console.log(waiters);
     const modal = document.querySelector('.modal');
     if (modal) modal.classList.remove('open');
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+      const hiding = document.getElementById('waiter_form');
+      if (hiding) hiding.classList.remove('hiding');
+    }, 100);
+  }, []);
   return (
-    <form onSubmit={handleSubmit} className="form animation ">
+    <form
+      id={isModal ? '' : 'waiter_form'}
+      onSubmit={handleSubmit}
+      className={'form ' + (focused ? ' hiding' : ' hidden')}
+    >
       <h2>Добавьте официанта</h2>
       <div className="input-group">
         <input

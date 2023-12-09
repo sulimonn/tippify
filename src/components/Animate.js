@@ -1,0 +1,3 @@
+function Animate() {}
+
+export { Animate };

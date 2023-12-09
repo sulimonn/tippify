@@ -10,6 +10,7 @@ button.btn {
   background: none;
   overflow: hidden;
   z-index: 1;
+  transition: all 0.4s;
 }
 
 button.btn h3 {

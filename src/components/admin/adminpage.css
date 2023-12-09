@@ -20,7 +20,7 @@
 
 .form {
   height: auto;
-  transition: all 0.2s;
+  transition: all 0.4s;
   padding: 21px 0;
 }
 .animation {
@@ -28,22 +28,12 @@
   opacity: 1;
   transition: all 0.6s;
 }
-.animation.hide {
-  pointer-events: none;
-  height: 0;
-  opacity: 0;
-}
 .title {
   margin-top: 25px;
   margin-bottom: 10px;
 }
 .gray {
   color: var(--color-gray);
-}
-.focusable:focus,
-.focusable:focus-within,
-.focusable:focus-visible {
-  outline: 0.2px solid var(--color-sft-prpl);
 }
 .box_white .info {
   display: flex;
@@ -53,8 +43,18 @@
   align-items: flex-start;
   text-align: right;
 }
+.focusable {
+  transition: all 0.2s;
+}
+.focused {
+  outline: 0.2px solid var(--color-blue);
+}
 .focusable .info {
   gap: 5px;
+  pointer-events: none;
+}
+.focusable .icon {
+  pointer-events: none;
 }
 .box_white .text-120 {
   color: var(--color-gray);
@@ -64,15 +64,21 @@
 .adminpage h2 {
   font-weight: 700;
 }
-.adminpage .list {
+.restaurants_list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.waiters_list {
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 15px;
   flex-direction: column;
   transition: all 0.2s;
 }
 .waiters {
+  margin: 7px 0;
   transition: all 0.3s;
   cursor: default;
 }
@@ -121,16 +127,32 @@
   height: auto;
   transition: all 0.5s;
 }
-.waiters {
+* {
+  transition: all 0.4s;
 }
-.adminpage .hide {
-  opacity: 0;
-  transform: translateX(-100vw);
-}
-.waiters.hide {
+.hiding {
   height: 0;
+  padding: 0;
+  overflow: hidden;
+  margin: 0;
+  opacity: 0;
 }
-
+.hide {
+  display: none !important;
+}
+.hidden {
+  display: none;
+}
+.form.hiding .input-group {
+  gap: 0;
+  padding: 0;
+}
+.waiters_list.hiding .title,
+.waiters_list.hiding .box_white,
+.waiters_list.hiding button {
+  height: 0 !important;
+  margin: 0 !important;
+}
 @media screen and (max-width: 440px) {
   .adminpage {
     padding-left: 21px;
