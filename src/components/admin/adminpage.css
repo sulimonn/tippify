@@ -46,6 +46,7 @@
   align-items: flex-start;
 }
 .focusable {
+  margin-bottom: 10px;
   transition: all 0.2s;
 }
 .focused {
@@ -69,7 +70,6 @@
 .restaurants_list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   width: 100%;
 }
 .waiters_list {
@@ -77,7 +77,11 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  transition: all 0.2s;
+  transition: all 0.3s;
+  height: 100%;
+}
+.waiters_list.hiding .waiters {
+  padding: 0;
 }
 .waiters {
   margin: 7px 0;
@@ -131,12 +135,14 @@
 * {
   transition: all 0.4s;
 }
+
 .hiding {
   height: 0;
   padding: 0;
   overflow: hidden;
   margin: 0;
   opacity: 0;
+  transition: all 0.3s;
 }
 .hide {
   display: none !important;
@@ -144,15 +150,21 @@
 .hidden {
   display: none;
 }
+.hiding .btn {
+  margin: 0 !important;
+  padding: 0 !important;
+}
 .form.hiding .input-group {
   gap: 0;
   padding: 0;
 }
 .waiters_list.hiding .title,
 .waiters_list.hiding .box_white,
-.waiters_list.hiding button {
+.waiters_list.hiding .btn {
+  opacity: 0;
   height: 0 !important;
   margin: 0 !important;
+  padding: 0;
 }
 @media screen and (max-width: 440px) {
   .adminpage {

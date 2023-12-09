@@ -49,13 +49,13 @@ const data = {
       id: 1,
       title: 'Ресторан Метрополь',
       location: 'Москва, ул. Лесная 123',
-      admin: 3,
+      admin: 2,
     },
     {
       id: 3,
       title: 'Ресторан Мертвые души',
       location: 'Москва, ул. Лесная 123',
-      admin: 3,
+      admin: 2,
     },
   ],
   cards: [

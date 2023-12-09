@@ -42,5 +42,7 @@
   padding: 0;
 }
 .openModal {
+  height: 100%;
+  transition: all 0.3s;
   width: 100%;
 }

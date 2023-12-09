@@ -39,7 +39,12 @@ function WaiterList({ click, waiters, setWaiters, focused }) {
   return focusedWaiters.length === 0 ? (
     <AddWaiter isModal={false} focused={focused} setWaiters={setWaiters} waiters={waiters} />
   ) : (
-    <div className={'waiters_list ' + (click ? ' hiding' : focused !== null ? '' : ' hide')}>
+    <div
+      className={
+        'waiters_list' +
+        (click ? (focused === null ? ' hiding' : ' hiding') : focused !== null ? '' : ' hide')
+      }
+    >
       <h2 className="title gray">Официанты</h2>
       {focusedWaiters.map((item) => (
         <div

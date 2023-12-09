@@ -71,6 +71,7 @@ const Admin = () => {
           ) : (
             <>
               <Restaurant
+                click={click}
                 setClick={setClick}
                 setFocused={setFocused}
                 focused={focused}
